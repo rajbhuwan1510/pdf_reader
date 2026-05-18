@@ -16,9 +16,9 @@ from langchain_core.prompts import ChatPromptTemplate
 load_dotenv()
 
 # Streamlit Page Config
-st.set_page_config(page_title="DocuIntel", page_icon="📄", layout="centered")
+st.set_page_config(page_title="PDF Chatbot", page_icon="📄", layout="centered")
 
-st.title("📄 DocuIntel (Streamlit Version)")
+st.title("📄 Chatbot for PDF Knowledge Retrieval")
 st.caption("Grounded PDF Intelligence powered by Groq & LangChain")
 
 # Initialize session state for chat history
