@@ -1,31 +1,32 @@
-# NLP-Powered RAG Chatbot
+# 📄 Chatbot for PDF Knowledge Retrieval
 
-This document tracks our progress, tasks, and modifications made to the project.
+![DocuIntel Banner](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python) ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white) ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain) ![Groq](https://img.shields.io/badge/Groq-f55036?style=for-the-badge)
 
-## Project Overview
-An intelligent NLP-powered chatbot built using a Retrieval-Augmented Generation (RAG) architecture. The chatbot answers user queries based strictly on the content retrieved from uploaded PDF documents.
+A powerful, high-performance RAG (Retrieval-Augmented Generation) application designed to extract, index, and query information from PDF documents. Built with **Streamlit** for the frontend, **LangChain** for the RAG orchestration, and the **Groq Llama-3.1-8b** model for lightning-fast inference.
 
-## Core Behavior
-- **Information Priority**: Always prioritize information retrieved from the PDF knowledge base.
-- **Strict Grounding**: Do NOT use external knowledge or assumptions. Responses must be grounded only in the retrieved context.
-- **NLP Processing**: Uses tokenization, intent recognition, and semantic understanding to process queries.
+## 🚀 Features
 
-## Implementation Workflow
-1. **Understand User Query**: Process query and convert into embeddings for semantic search.
-2. **Retrieve Context**: Perform similarity search in the vector database and retrieve relevant chunks.
-3. **Validate Context**: Check similarity scores. Proceed if above threshold; otherwise, respond "Response data insufficient."
-4. **Generate Response**: Use only retrieved context for accurate, contextual, and clear answers.
+- **Instant PDF Ingestion:** Upload any PDF document and have it processed in seconds.
+- **Advanced Contextual Retrieval:** Uses `RecursiveCharacterTextSplitter` and `FAISS` (Facebook AI Similarity Search) to ensure high-accuracy semantic search.
+- **Lightning Fast Inference:** Powered by Groq's LPU inference engine, delivering responses almost instantly via the `llama-3.1-8b-instant` model.
+- **Cyberpunk Glassmorphism UI:** A sleek, modern dark-themed interface built natively into Streamlit.
+- **Strict Grounding:** The LLM is strictly instructed to only answer based on the provided document context, preventing hallucinations.
 
-## Strict Rules
-- Respond ONLY with **"Response data insufficient."** if the answer is not clearly supported.
-- Do not guess, infer, or provide general knowledge.
-- Keep responses natural and conversational but structured.
-- Do not mention the retrieval process, PDF, or vector database in final answers.
+## 🛠️ Tech Stack
 
-## Activity Log
-- **2026-05-15**: Initialized project in `C:\Users\rajbh\Desktop\assignment`.
-- **2026-05-15**: Scaffolded Vite React project.
-- **2026-05-15**: Switched chat engine to **Groq** (Mixtral-8x7b).
-- **2026-05-15**: Integrated **local embeddings** using Xenova/Transformers (No API key needed for embeddings).
-- **2026-05-15**: Updated backend to support `GROQ_API_KEY`.
-- **2026-05-15**: Implemented **Dashboard File Upload** using Multer and FormData.
+- **Frontend:** Streamlit
+- **Orchestration:** LangChain Core (LCEL)
+- **Vector Store:** FAISS (Local Vector Database)
+- **Embeddings:** HuggingFace (`all-MiniLM-L6-v2`) via `sentence-transformers`
+- **LLM Engine:** Groq API (`llama-3.1-8b-instant`)
+
+## 📂 Project Documentation
+
+To help you navigate this project, I have separated the documentation into focused files:
+
+1. [**Setup Instructions (`SETUP.md`)**](./SETUP.md) - How to run this app locally.
+2. [**Architecture (`ARCHITECTURE.md`)**](./ARCHITECTURE.md) - System design and data flow.
+3. [**API & Pipeline (`API_DOCUMENTATION.md`)**](./API_DOCUMENTATION.md) - Detailed breakdown of the LangChain RAG pipeline.
+
+## 🔗 Live Demo
+*App is deployed via Streamlit Community Cloud. Check the repository settings for the live link.*
