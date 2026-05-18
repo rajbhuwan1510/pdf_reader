@@ -18,6 +18,46 @@ load_dotenv()
 # Streamlit Page Config
 st.set_page_config(page_title="PDF Chatbot", page_icon="📄", layout="centered")
 
+# Custom CSS for a cool, modern cyber-glass look
+st.markdown("""
+<style>
+    /* Remove default top padding */
+    .block-container {
+        padding-top: 2rem !important;
+    }
+    
+    /* Sleek gradient title */
+    h1 {
+        background: -webkit-linear-gradient(45deg, #6366F1, #A855F7, #EC4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 900 !important;
+        letter-spacing: -1px;
+    }
+    
+    /* Glowing chat bubbles */
+    .stChatMessage {
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+    }
+    .stChatMessage:hover {
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+    }
+    
+    /* Custom file uploader */
+    [data-testid="stFileUploader"] {
+        border-radius: 12px;
+        border: 1px dashed rgba(99, 102, 241, 0.5);
+        background: rgba(30, 41, 59, 0.5);
+    }
+</style>
+""", unsafe_allow_html=True)
+
 st.title("📄 Chatbot for PDF Knowledge Retrieval")
 st.caption("Grounded PDF Intelligence powered by Groq & LangChain")
 
